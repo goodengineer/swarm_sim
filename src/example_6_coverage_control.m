@@ -48,7 +48,7 @@ for t = 0 : DT : T
     
     [G,A,VC] = s.coverageControl();
     
-    s.goToPoints(G,25)
+    s.goToPoints(G,N/2)
     
     s.plotRobots([0.933,0.698,0.067],'EdgeColor','none')
     if PLOT_VORONOI
