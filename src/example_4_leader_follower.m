@@ -49,7 +49,7 @@ xlambda0 = [x0; lambda0];
 x = x0;
 
 q = s.getPoses();
-while max(max(abs(q(1:2,:)-X0))) > 0.01
+while max(max(abs(q(1:2,:)-X0))) > DT
     s.goToPoints(X0)
     q = s.getPoses();
 end
@@ -69,7 +69,7 @@ for t = 0 : DT : T
     xlambda = expm(M*t)*xlambda0;
     X = reshape(xlambda(1:2*N),2,N);
     
-    s.goToPoints(X, 100)
+    s.goToPoints(X, 1/DT)
     
     if PLOT_GRAPH
         s.plotGraph('Color',[0,0.145,0.298],'LineWidth',5)
