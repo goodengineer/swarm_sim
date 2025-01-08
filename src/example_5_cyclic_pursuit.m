@@ -33,7 +33,7 @@ for t = 0 : DT : T
     u = zeros(2,s.N);
     for i = 1 : s.N
         for j = s.getNeighbors(i)
-            u(:,i) = 10 * Rth * (q(1:2,j)-q(1:2,i));
+            u(:,i) = (N/2) * Rth * (q(1:2,j)-q(1:2,i));
         end
     end
     
